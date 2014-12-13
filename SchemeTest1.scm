@@ -1,3 +1,5 @@
+;for use with SuperCollider
+;run this in DrRacket IDE
 (clear)
 (define pw 28)
 (define ph 16)
