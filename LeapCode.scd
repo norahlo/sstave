@@ -6,7 +6,7 @@
 
 s.boot;
 
-(
+
 
 Spec.add(\mixdww, [-1,1, \lin]);
 Spec.add(\source1, [0,1, \lin]);
@@ -49,7 +49,7 @@ Ndef(\N,{
 	{(roll > 0.2) || (roll < -0.4)}{Ndef(\bbeta).set(\maxFreq, 3800)}};
 
 
-(
+
 //waveforms occuring randomly
 ~numSamples = 4096;
 ~grainBank = 10.collect{Array(~numSamples)};
@@ -121,7 +121,31 @@ Ndef(\gpan,{
 	XFade2.ar(Ndef(\ffilter).ar,sigl+sigr,mixdww);
 })
 
-)
+
+Ndef(\dyn, {
+	var in;
+	in = Ndef(\source1).ar;
+	DynKlank.ar(`[{LFNoise2.kr(0.1).range(200, 720)} ! 20 * 2, 0.01, \dec.kr(0.6) ! 20], in)
+});
+
+Ndef(\dynQ, {
+	var in;
+	in = Ndef(\source2).ar;
+	DynKlank.ar(`[{LFNoise2.kr(0.1).range(200, 720).midicps.round(1).cpsmidi} ! 20 * 2, 0.01, \dec.kr(0.6) ! 20], in)
+});
+
+
+
+
+
+Ndef(\frez, {
+	var in, chain;
+	in = Ndef(\source3).ar;
+	chain = FFT({LocalBuf(2048)} ! 2, in);
+	chain = PV_MagFreeze(chain, 1 - Trig1.kr(Impulse.kr(\rate.kr(1))));
+	IFFT(chain);
+});
+
 
 //GUI!!
 (
