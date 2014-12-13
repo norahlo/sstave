@@ -1,5 +1,8 @@
 
-//to be used with "LeapGestureMapping.scd"
+
+//NB: Code still in Progress.
+
+//to be used in conjunction with "LeapGestureMapping.scd"
 
 s.boot;
 
