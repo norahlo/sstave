@@ -1,5 +1,6 @@
 ;to be used in conjunction with "LeapCode.scd"
 ;Make sure Leap is connected
+;run this in DrRacket IDE
 
 
 (clear)
