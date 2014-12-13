@@ -16,4 +16,4 @@ So far:
 
 - Live Coding Swarm game development tools for use with Processing and SuperCollider. To be used in conjunction with Utopia, a SuperCollider library for the creation of networked music applications, and builds upon the work of the Republic Quark and other existing network systems in SuperCollider. This is available here: https://github.com/muellmusik/Utopia
 
-More tools will be become available as they are created.
+More tools will be become available in due course.
