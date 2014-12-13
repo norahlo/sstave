@@ -1,4 +1,5 @@
 
+//to be used with "LeapGestureMapping.scd"
 
 s.boot;
 
@@ -9,7 +10,7 @@ Spec.add(\source1, [0,1, \lin]);
 Spec.add(\source2, [0,1, \lin]);
 Spec.add(\source3, [0,1, \lin]);
 
-Ndef(\aalpha,{
+Ndef(\A,{
 	arg ddparam = 0.2,gate = 1;
 	var adparam,minfreq,maxfreq,knum,sig,sig2,mix;
 	adparam = LFNoise2.kr(12).range(0.6,1);
@@ -29,7 +30,7 @@ Ndef(\aalpha,{
 	{(roll <= 0.2) && (roll > -0.2)}{Ndef(\aalpha).set(\ddparam, 0.3)}
 	{(roll > 0.2) || (roll < -0.4)}{Ndef(\aalpha).set(\ddparam,0.9)}};
 
-Ndef(\no1,{
+Ndef(\N,{
 	arg maxFreq = 3800;
 	var ampScale,knum,sig;
 	ampScale = ~rZ.kr+1*0.4;
@@ -46,7 +47,7 @@ Ndef(\no1,{
 
 
 (
-//waves
+//waveforms occuring randomly
 ~numSamples = 4096;
 ~grainBank = 10.collect{Array(~numSamples)};
 ~stepSize = {0.cauchy(0.1)};
@@ -74,12 +75,12 @@ Ndef(\cgamma,{var freq, randfac,sig;
 });
 
 
-Ndef(\sourcesMix,{
+Ndef(\MixSources,{
 	(Ndef(\aalpha).ar*\source1.kr(1,0))+
 	(Ndef(\bbeta).ar*\source2.kr(0,0))+
 	(Ndef(\cgamma).ar*\source3.kr(0,0))});
 
-Ndef(\fre1,{
+Ndef(\F1,{
 	arg mixdww = 0;
 	var in,sig;
 	in = Ndef(\sourcesMix).ar;
@@ -119,7 +120,7 @@ Ndef(\gpan,{
 
 )
 
-
+//GUI!!
 (
 ~timergui = Window("Timer",Rect(300,180,300,220)).front;
 ~timestring = StaticText(~timergui,Rect(0,0,300,180)).string_("Time").font_(Font(size:72,bold:true)).align_(\center);
