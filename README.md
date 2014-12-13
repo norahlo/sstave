@@ -10,8 +10,8 @@ Tools made using SuperCollider, Fluxus and Processing.  Emphasis on audio visual
 
 So far:
 
-#1. Leap Controller-SuperCollider-Fluxu
+-Leap Controller-SuperCollider-Fluxu
 
-#2. Live Coding Swarm game development tools for use with Processing and SuperCollider
+- Live Coding Swarm game development tools for use with Processing and SuperCollider
 
 More tools will be become available as they are created.
