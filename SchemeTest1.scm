@@ -1,6 +1,7 @@
 ;for use with SuperCollider
 ;run this in DrRacket IDE
 (clear)
+(start-audio "supercollider" 1024 44100)
 (define pw 28)
 (define ph 16)
 (define p (build-nurbs-sphere pw ph))
