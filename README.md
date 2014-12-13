@@ -12,7 +12,7 @@ Tools made using SuperCollider, Fluxus and Processing.  Emphasis on audio visual
 
 So far:
 
-- Leap Controller integration with SuperCollider and Fluxus/Scheme languages.
+- LeapDef: A set of tools in SuperCollider and Fluxus for use with the Leap Controller. Still in Progress, use at own risk.
 
 - Live Coding Swarm game development tools for use with Processing and SuperCollider. To be used in conjunction with Utopia, a SuperCollider library for the creation of networked music applications, and builds upon the work of the Republic Quark and other existing network systems in SuperCollider. This is available here: https://github.com/muellmusik/Utopia
 
